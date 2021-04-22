@@ -1,0 +1,121 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3fd48c1ee7a03b5e738277df62130dd6b31b833e44d51c583ab5d3f3768d4d93
+
+name:           decision-table
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/decision-table#readme>
+homepage:       https://github.com/githubuser/decision-table#readme
+bug-reports:    https://github.com/githubuser/decision-table/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        LGPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/decision-table
+
+library
+  exposed-modules:
+      ImmportDefinitions
+      Lib
+      LoadCellInfo
+      ManualTree
+      MappingInterface
+      Membrane
+      ParseMarkers
+  other-modules:
+      Paths_decision_table
+  hs-source-dirs:
+      src
+  build-depends:
+      MissingH
+    , QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , docopt
+    , edit-distance
+    , extra
+    , hspec
+    , hspec-megaparsec
+    , megaparsec
+    , optparse-applicative
+    , unordered-containers
+    , utf8-string
+    , vector
+  default-language: Haskell2010
+
+executable cell-ontology-mapping
+  main-is: Main.hs
+  other-modules:
+      Paths_decision_table
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , decision-table
+    , docopt
+    , edit-distance
+    , extra
+    , hspec
+    , hspec-megaparsec
+    , megaparsec
+    , optparse-applicative
+    , unordered-containers
+    , utf8-string
+    , vector
+  default-language: Haskell2010
+
+test-suite cell-ontology-mapping-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      DecisionVariablesSpec
+      ExcessDecisionVariablesSpec
+      ImmportSpec
+      ParseSpec
+      RepeatableDecisionVariablesSpec
+      Paths_decision_table
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , decision-table
+    , docopt
+    , edit-distance
+    , extra
+    , hspec
+    , hspec-megaparsec
+    , megaparsec
+    , optparse-applicative
+    , unordered-containers
+    , utf8-string
+    , vector
+  default-language: Haskell2010

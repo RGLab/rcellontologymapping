@@ -1,0 +1,11 @@
+Usage:
+  cell-ontology-mapping classify [--json] <marker_text>
+  cell-ontology-mapping markers
+  
+
+Options:
+  -h --help       show this help text
+  --json          output results or errors in JSON format
+
+Examples:
+  cell-ontology-mapping classify "CD3e-, CD19+, CD24++, CD38++"
