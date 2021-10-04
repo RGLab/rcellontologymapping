@@ -1,6 +1,6 @@
 Package: rcellontologymapping
 Title: Map cell surface markers to Cell Ontology IDs
-Version: 0.0.1.0
+Version: 0.0.2.0
 Authors@R: 
     person(given = "Keith",
            family = "Curtis",

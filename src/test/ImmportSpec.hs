@@ -38,7 +38,7 @@ spec = describe "Immport cell marker tests" $ do
   it "classify CL_0000624" $ do
     classify_label "CL_0000624" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000624"
 
--- Immport is missing CCR4 
+
   it "classify CL_0000792" $ do
     classify_label "CL_0000792" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000792"
 
@@ -122,7 +122,7 @@ spec = describe "Immport cell marker tests" $ do
   it "classify CL_0000788" $ do
     classify_label "CL_0000788" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000788"
     
--- TODO investigate
+
   it "classify CL_0000980" $ do
     classify_label "CL_0000980" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000980"
     
@@ -158,7 +158,7 @@ spec = describe "Immport cell marker tests" $ do
   it "classify CL_0000938" $ do
     classify_label "CL_0000938" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000938"
     
--- missing CD19
+
   it "classify CL_0000623" $ do
     classify_label "CL_0000623" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000623"
     
@@ -174,18 +174,18 @@ spec = describe "Immport cell marker tests" $ do
   it "classify CL_0000546" $ do
     classify_label "CL_0000546" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000546"
     
-{- Not in Maecker et al.
+-- Not in Maecker et al.
   it "classify CL_0000917" $ do
     classify_label "CL_0000917" `shouldBe` "http://purl.obolibrary.org/obo/CL_0000917"
     
-
+-- Not in Maecker et al.
   it "classify CL_0002128" $ do
     classify_label "CL_0002128" `shouldBe` "http://purl.obolibrary.org/obo/CL_0002128"
     
-
+-- Not in Maecker et al.
   it "classify CL_0001052" $ do
     classify_label "CL_0001052" `shouldBe` "http://purl.obolibrary.org/obo/CL_0001052"
--}
+
 
   it "classify CL_0001043" $ do
     classify_label "CL_0001043" `shouldBe` "http://purl.obolibrary.org/obo/CL_0001043"

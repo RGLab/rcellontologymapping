@@ -1,6 +1,6 @@
 -- Copyright 2021 Fred Hutchinson Cancer Research Center
 --------------------------------------------------------------------------------
---- Encode manual decision tree here based on Maecker et al. 2012
+--- Encode manual decision tree here based partially Maecker et al. 2012  to map to ImmPort cell definitions 
 {-# LANGUAGE OverloadedStrings #-}
 
 
@@ -92,11 +92,32 @@ cl_tcell =  ("T cell", "http://purl.obolibrary.org/obo/CL_0000084")
 cl_cd4_tcell :: CellLabel
 cl_cd4_tcell = ("CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0000624")
 
+{- activated T-cell sub types do not yet have enough experimental evidence and are not supported by the cell ontology
 cl_acm_cd4_tcell :: CellLabel
 cl_acm_cd4_tcell = ("activated central memory CD4+ T cell", "TODO acm cd4")
 
 cl_an_cd4_tcell :: CellLabel
 cl_an_cd4_tcell = ("activated naive CD4+ T cell", "TODO activate cd4")
+
+cl_aem_cd4_tcell :: CellLabel
+cl_aem_cd4_tcell = ("activated effector memory CD4+ T cell", "activated effector memory")
+
+cl_ae_cd4_tcell :: CellLabel
+cl_ae_cd4_tcell = ("activated effector CD4+ T cell", "activated effector")
+
+cl_acm_cd8_tcell :: CellLabel
+cl_acm_cd8_tcell = ("activated central memory CD8+ T cell", "TODO")
+
+cl_am_cd8_tcell :: CellLabel
+cl_am_cd8_tcell = ("activated naive memory CD8+ T cell", "TODO")
+
+cl_ae_cd8_tcell :: CellLabel
+cl_ae_cd8_tcell = ("activated effector CD8+ T cell", "TODO ae cd8")
+
+cl_aem_cd8_tcell :: CellLabel
+cl_aem_cd8_tcell = ("activated effector memory CD8+ T cell", "TODO aem cd8")
+
+-}
 
 cl_naive_cd4_tcell :: CellLabel
 cl_naive_cd4_tcell = ("naive CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0000895")
@@ -104,8 +125,6 @@ cl_naive_cd4_tcell = ("naive CD4+ T cell", "http://purl.obolibrary.org/obo/CL_00
 cl_memory_cd4_tcell :: CellLabel
 cl_memory_cd4_tcell = ("central memory CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0000904")
 
-cl_aem_cd4_tcell :: CellLabel
-cl_aem_cd4_tcell = ("activated effector memory CD4+ T cell", "activated effector memory")
 
 cl_effector_cd4_tcell :: CellLabel
 cl_effector_cd4_tcell = ("effector CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0001044")
@@ -113,8 +132,6 @@ cl_effector_cd4_tcell = ("effector CD4+ T cell", "http://purl.obolibrary.org/obo
 cl_activated_cd4_tcell :: CellLabel
 cl_activated_cd4_tcell = ("activated CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0001043")
 
-cl_ae_cd4_tcell :: CellLabel
-cl_ae_cd4_tcell = ("activated effector CD4+ T cell", "activated effector")
 
 cl_em_cd4_tcell :: CellLabel
 cl_em_cd4_tcell = ("effector memory CD4+ T cell", "http://purl.obolibrary.org/obo/CL_0000905")
@@ -131,11 +148,6 @@ cl_naive_cd8_tcell = ("naive CD8+ T cell", "http://purl.obolibrary.org/obo/CL_00
 
 
 
-cl_acm_cd8_tcell :: CellLabel
-cl_acm_cd8_tcell = ("activated central memory CD8+ T cell", "TODO")
-
-cl_am_cd8_tcell :: CellLabel
-cl_am_cd8_tcell = ("activated naive memory CD8+ T cell", "TODO")
 
 cl_cm_cd8_tcell :: CellLabel
 cl_cm_cd8_tcell = ("central memory CD8+ T cell", "http://purl.obolibrary.org/obo/CL_0000907")
@@ -149,18 +161,13 @@ cl_effector_cd8_tcell = ("effector CD8+ T cell", "http://purl.obolibrary.org/obo
 cl_effector_memory_cd8_tcell :: CellLabel
 cl_effector_memory_cd8_tcell = ("effector memory CD8+ T cell", "http://purl.obolibrary.org/obo/CL_0000913")
 
-cl_ae_cd8_tcell :: CellLabel
-cl_ae_cd8_tcell = ("activated effector CD8+ T cell", "TODO ae cd8")
-
-cl_aem_cd8_tcell :: CellLabel
-cl_aem_cd8_tcell = ("activated effector memory CD8+ T cell", "TODO aem cd8")
 
 
 --cl_memory_treg = ("memory Treg cell", "http://purl.obolibrary.org/obo/CL_0002678")
 cl_memory_treg :: CellLabel
 cl_memory_treg = ("memory CCR4+ Treg cell", "http://purl.obolibrary.org/obo/CL_0001046")
 
---cl_naive_treg = ("naive Treg cell", "http://purl.obolibrary.org/obo/CL_0000792") -- ?
+
 cl_naive_treg :: CellLabel
 cl_naive_treg = ("naive CCR4+ Treg cell", "http://purl.obolibrary.org/obo/CL_0001045")
 
@@ -239,6 +246,29 @@ cl_helper2 = ("Th2 cell", "TODO")
 cl_helper17 :: CellLabel
 cl_helper17 = ("Th17 cell", "http://purl.obolibrary.org/obo/CL_0000899")
 
+
+-- Support for ImmPort-specific template, when possible
+-- Immport's CL_0000623 looks underspecified, "http://purl.obolibrary.org/obo/CL_0000623"
+--cl_todo = ("??", "http://purl.obolibrary.org/obo/CL_0000546")
+
+cl_immport_th2 :: CellLabel
+cl_immport_th2 = ("T-helper 2 cell", "http://purl.obolibrary.org/obo/CL_0000546")
+
+cl_immport_tc1 :: CellLabel
+cl_immport_tc1 = ("Tc1 cell", "http://purl.obolibrary.org/obo/CL_0000917")
+
+cl_immport_tc17 :: CellLabel
+cl_immport_tc17 = ("Tc17 cell", "http://purl.obolibrary.org/obo/CL_0002128")
+
+cl_immport_tc2 :: CellLabel
+cl_immport_tc2 = ("Tc2 cell", "http://purl.obolibrary.org/obo/CL_0001052")
+
+cl_immport_nk_t_cell :: CellLabel
+cl_immport_nk_t_cell = ("mature NK T cell", "http://purl.obolibrary.org/obo/CL_0000814")
+
+cl_immport_treg :: CellLabel
+cl_immport_treg = ("CD4-positive, CD25+, alpha-beta regulatory T cell", "http://purl.obolibrary.org/obo/CL_0000792")
+
 --------------------------------------------------------------------------------
 
 empty_vars :: DecisionVariables
@@ -262,10 +292,20 @@ cd3_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariable
 cd3_switch profile prev_vars = case (HM.lookup cd3_marker profile) of
                      Just Unknown -> throw $ MarkerStatusUnknown cd3_marker
                      Just Lacking -> cd19_switch profile vars'
-                     Just _ -> tcell_switch profile vars'
+                     Just _ -> case (cd14, cd56, cd33) of
+                                 (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd14_marker
+                                 (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd14_marker
+                                 (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd14_marker
+                                 (Just Lacking, Just x, Just Lacking) | (isPlus x)  -> (cl_immport_nk_t_cell, vars'')
+                                 _ -> tcell_switch profile vars'
                      Nothing -> (cl_cell, prev_vars)
   where
     vars' = S.union prev_vars (S.fromList [cd3_marker])
+    cd14 = HM.lookup cd14_marker profile
+    cd56 = HM.lookup cd56_marker profile
+    cd33 = HM.lookup cd33_marker profile
+    vars'' = S.union vars' (S.fromList [cd14_marker, cd56_marker, cd33_marker])
+
 
 
 -- so what if cd4 is missing but cd8 is not?
@@ -294,10 +334,12 @@ cd4_switch profile prev_vars = case (ccr4, cd25, cd127) of
                      (Just Unknown, _, _) -> throw $ MarkerStatusUnknown ccr4_marker
                      (_, Just Unknown, _) -> throw $ MarkerStatusUnknown cd25_marker
                      (_, _, Just Unknown) -> throw $ MarkerStatusUnknown cd127_marker
+                     (Nothing, Just x, Just LowAmount) | (isPlus x) -> (cl_immport_treg, prev_vars +< cd25_marker +< cd127_marker)
                      (Just x, Just y, Just LowAmount) | (isPlus x) && (isPlus y) -> treg_switch profile vars'
                      _ -> case (cxcr3, ccr6) of
                                                    (Just x, Just y) | (isPlus x) && (isPlus y) -> ccr7_switch profile prev_vars
                                                    (Just x, Just y) -> helper_cd4_switch profile vars''
+                                                   (Just Lacking, _) -> (cl_immport_th2, prev_vars +< cxcr3_marker)
                                                    _ -> ccr7_switch profile prev_vars
 
                      -- (_, Nothing, _) -> cl_cd4_tcell -- ccr7_switch profile vars' -- throw $ MissingMarker cd25_marker
@@ -315,13 +357,16 @@ cd4_switch profile prev_vars = case (ccr4, cd25, cd127) of
 
 
 ccr7_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariables)
-ccr7_switch profile prev_vars = case (ccr7, has_submarkers) of
-                      (Just Unknown, _)     -> throw $ MarkerStatusUnknown ccr7_marker
-                      (Just Lacking, True)  -> effector_cd4_switch profile vars'
-                      (Just _, True)        -> memory_cd4_switch profile vars'
-                      _                     -> case (cd38, hla_dr) of
-                                                   (Just x, Just y) | (isPlus x) && (isPlus y) -> (cl_activated_cd4_tcell, vars_activated_tcell)
-                                                   _                                           -> (cl_cd4_tcell, prev_vars)
+ccr7_switch profile prev_vars = case (cd38, hla_dr) of
+                                  (Just x, Just y) | (isPlus x) && (isPlus y) -> (cl_activated_cd4_tcell, vars_activated_tcell)
+                                  _  -> case (ccr7, has_submarkers) of
+                                          (Just Unknown, _)     -> throw $ MarkerStatusUnknown ccr7_marker
+                                          (Just Lacking, True)  -> effector_cd4_switch profile vars'
+                                          (Just _, True)        -> memory_cd4_switch profile vars'
+                                          _ ->  (cl_cd4_tcell, prev_vars)
+
+
+                                  
 
   where
     ccr7 = HM.lookup ccr7_marker profile
@@ -337,8 +382,8 @@ memory_cd4_switch profile prev_vars = case (cd45, cd38, hla_dr) of
                           (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd45_marker
                           (_, Just Unknown, _) -> throw $ MarkerStatusUnknown cd38_marker
                           (_, _, Just Unknown) -> throw $ MarkerStatusUnknown hla_marker
-                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_acm_cd4_tcell, vars')
-                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_an_cd4_tcell, vars')
+                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_activated_cd4_tcell, vars')
+                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_activated_cd4_tcell, vars')
                           (Just Lacking, _, _) -> (cl_memory_cd4_tcell, prev_vars +< cd45_marker)
                           (Just x, _, _) | isPlus x -> (cl_naive_cd4_tcell, prev_vars +< cd45_marker)
                           (Nothing, _, _) -> (cl_cd4_tcell, prev_vars)
@@ -349,17 +394,17 @@ memory_cd4_switch profile prev_vars = case (cd45, cd38, hla_dr) of
     cd45 = HM.lookup cd45_marker profile
     cd38 = HM.lookup cd38_marker profile
     hla_dr = HM.lookup hla_marker profile
-    vars' = S.union prev_vars (S.fromList [cd45_marker, cd38_marker, hla_marker])
-
+    --vars' = S.union prev_vars (S.fromList [cd45_marker, cd38_marker, hla_marker])
+    vars' = S.union prev_vars (S.fromList [cd38_marker, hla_marker])
 
 effector_cd4_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariables)
 effector_cd4_switch profile prev_vars = case (cd45, cd38, hla_dr) of
                           (_, Just Unknown, _) -> throw $ MarkerStatusUnknown cd38_marker
                           (_, _, Just Unknown) -> throw $ MarkerStatusUnknown hla_marker
                           (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd45_marker
-                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_aem_cd4_tcell, vars')
+                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_activated_cd4_tcell, vars')
                           (Just Lacking, _, _) -> (cl_em_cd4_tcell, prev_vars +< cd45_marker)
-                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_ae_cd4_tcell, prev_vars +< cd45_marker +< cd38_marker +< hla_marker)
+                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_activated_cd4_tcell, prev_vars +< cd45_marker +< cd38_marker +< hla_marker)
                           (Just x, _, _) | (isPlus x) -> (cl_effector_cd4_tcell, prev_vars +< cd45_marker)
                           (Nothing, _, _) -> (cl_cd4_tcell, prev_vars)
                           (_, Nothing, _) -> (cl_cd4_tcell, prev_vars)
@@ -375,14 +420,29 @@ effector_cd4_switch profile prev_vars = case (cd45, cd38, hla_dr) of
 
 
 cd8_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariables)
-cd8_switch profile prev_vars = case (ccr7, has_submarkers) of
-                     (Just Unknown, _)    -> throw $ MarkerStatusUnknown ccr7_marker
-                     (Just Lacking, True) -> effector_cd8_switch profile vars'
-                     (Just _, True)       -> memory_cd8_switch profile vars'
-                     _                    -> case (cd38, hla_dr) of
-                                                 (Just x, Just y) | (isPlus x) && (isPlus y) -> (cl_activated_cd8_tcell, vars_activated_tcell)
-                                                 _ -> (cl_cd8_tcell, prev_vars)
+cd8_switch profile prev_vars = case (ccr7, has_submarkers, cxcr3, ccr6) of
+                     (Just Unknown, _, _, _)            -> throw $ MarkerStatusUnknown ccr7_marker
+                     (_, _, Just x, _) | isPlus x       -> (cl_immport_tc1, prev_vars +< cxcr3_marker)
+                     (_, _, _, Just x) | isPlus x       -> (cl_immport_tc17, prev_vars +< ccr6_marker)
+                     (_, _, Just Lacking, Just Lacking) -> (cl_immport_tc2, prev_vars +< cxcr3_marker +< ccr6_marker)
+                     _                                  -> cd8_ccr7_switch profile prev_vars
 
+  where
+    ccr7 = HM.lookup ccr7_marker profile
+    cd38 = HM.lookup cd38_marker profile
+    hla_dr = HM.lookup hla_marker profile
+    cxcr3 = HM.lookup cxcr3_marker profile
+    ccr6 = HM.lookup ccr6_marker profile    
+    has_submarkers = isJust $ HM.lookup cd45_marker profile
+
+
+cd8_ccr7_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariables)
+cd8_ccr7_switch profile prev_vars =  case (cd38, hla_dr) of
+                                       (Just x, Just y) | (isPlus x) && (isPlus y) -> (cl_activated_cd8_tcell, vars_activated_tcell)
+                                       _ -> case (ccr7, has_submarkers) of
+                                              (Just Lacking, True) -> effector_cd8_switch profile vars'
+                                              (Just _, True)       -> memory_cd8_switch profile vars'
+                                              _                    -> (cl_cd8_tcell, prev_vars)
   where
     ccr7 = HM.lookup ccr7_marker profile
     cd38 = HM.lookup cd38_marker profile
@@ -392,14 +452,15 @@ cd8_switch profile prev_vars = case (ccr7, has_submarkers) of
     has_submarkers = isJust $ HM.lookup cd45_marker profile
 
 
+
 memory_cd8_switch :: MarkerProfile -> DecisionVariables ->(CellLabel, DecisionVariables)
 memory_cd8_switch profile prev_vars = case (cd45, cd38, hla_dr) of
                           (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd45_marker
                           (_, Just Unknown, _) -> throw $ MarkerStatusUnknown cd38_marker
                           (_, _, Just Unknown) -> throw $ MarkerStatusUnknown hla_marker
-                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_acm_cd8_tcell, vars')
+                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_activated_cd8_tcell, vars')
                           (Just Lacking, _, _) -> (cl_cm_cd8_tcell, prev_vars +< cd45_marker)
-                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_am_cd8_tcell, vars')
+                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z)  -> (cl_activated_cd8_tcell, vars')
                           (Just x, _, _) | (isPlus x) -> (cl_naive_cd8_tcell, prev_vars +< cd45_marker)
                           (Nothing, _, _) -> (cl_cd8_tcell, prev_vars)
                           (_, Nothing, _) -> (cl_cd8_tcell, prev_vars)
@@ -418,9 +479,9 @@ effector_cd8_switch profile prev_vars = case (cd45, cd38, hla_dr) of
                           (Just Unknown, _, _) -> throw $ MarkerStatusUnknown cd45_marker
                           (_, Just Unknown, _) -> throw $ MarkerStatusUnknown cd38_marker
                           (_, _, Just Unknown) -> throw $ MarkerStatusUnknown hla_marker
-                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_aem_cd8_tcell, vars')
+                          (Just Lacking, Just x, Just y) | (isPlus x) && (isPlus y)  -> (cl_activated_cd8_tcell, vars')
                           (Just Lacking, _, _) -> (cl_effector_memory_cd8_tcell, prev_vars +< cd45_marker)
-                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z) -> (cl_ae_cd8_tcell, vars')
+                          (Just x, Just y, Just z) | (isPlus x) && (isPlus y) && (isPlus z) -> (cl_activated_cd8_tcell, vars')
                           (Just x, _, _) | isPlus x -> (cl_effector_cd8_tcell, prev_vars +< cd45_marker)
                           (Nothing, _, _) -> (cl_cd8_tcell, prev_vars)
                           (_, Nothing, _) -> (cl_cd8_tcell, prev_vars)
@@ -460,12 +521,17 @@ treg_switch profile prev_vars = case (cd45ro, hla_dr) of
 -}
 
 cd19_switch :: MarkerProfile -> DecisionVariables -> (CellLabel, DecisionVariables)
-cd19_switch profile prev_vars = case cd19 of
-                     Just Unknown -> throw $ MarkerStatusUnknown cd19_marker
-                     Just Lacking -> monocytes_switch profile vars'
-                     Just _ -> bcell_switch profile vars'
-                     Nothing -> (cl_non_tcell, prev_vars)
+cd19_switch profile prev_vars = case (cd19, cd56) of
+                     (Just Unknown, _)      -> throw $ MarkerStatusUnknown cd19_marker
+                     (_, Just Unknown)      -> throw $ MarkerStatusUnknown cd56_marker
+                     (_, Just x) | isPlus x -> nk_switch profile (prev_vars +< cd56_marker)
+                     (Just Lacking, _)      -> monocytes_switch profile vars'
+                     (Just _, _)            -> bcell_switch profile vars'
+                     _                      -> (cl_non_tcell, prev_vars)
+
+                                
   where
+    cd56 = HM.lookup cd56_marker profile
     cd19 = HM.lookup cd19_marker profile
     vars' = S.union prev_vars (S.fromList [cd19_marker])
 

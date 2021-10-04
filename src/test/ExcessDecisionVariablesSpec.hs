@@ -72,15 +72,15 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
   it "excess_decision_variables2 CL_0000624" $ do
     excess_decision_variables2 "CL_0000624" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000624")
 
-{- -- Immport is missing CCR4 
+
   it "excess_decision_variables2 CL_0000792" $ do
     excess_decision_variables2 "CL_0000792" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000792")
--}
 
-{-  -- CCR4+ not in Maeker et al.
+
+
   it "excess_decision_variables2 CL_0001046" $ do
     excess_decision_variables2 "CL_0001046" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0001046")
--}  
+
 
   it "excess_decision_variables2 CL_0001045" $ do
     excess_decision_variables2 "CL_0001045" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0001045")
@@ -126,10 +126,10 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
     excess_decision_variables2 "CL_0001049" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0001049")
     
 
-{- -- cd33 and NK T cells are not in Maecker et al.
+
   it "excess_decision_variables2 CL_0000814" $ do
     excess_decision_variables2 "CL_0000814" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000814")
--}
+
 
   it "excess_decision_variables2 CL_0000625" $ do
     excess_decision_variables2 "CL_0000625" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000625")
@@ -158,7 +158,7 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
   it "excess_decision_variables2 CL_0000788" $ do
     excess_decision_variables2 "CL_0000788" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000788")
     
--- TODO investigate
+
   it "excess_decision_variables2 CL_0000980" $ do
     excess_decision_variables2 "CL_0000980" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000980")
     
@@ -195,10 +195,10 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
     excess_decision_variables2 "CL_0000938" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000938")
     
 
-{- -- missing CD19
+
   it "excess_decision_variables2 CL_0000623" $ do
     excess_decision_variables2 "CL_0000623" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000623")
--}
+
 
   it "excess_decision_variables2 CL_0000545" $ do
     excess_decision_variables2 "CL_0000545" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000545")
@@ -206,13 +206,13 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
   it "excess_decision_variables2 CL_0000899" $ do
     excess_decision_variables2 "CL_0000899" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000899")
     
-{- -- DOUBLE-CHECK not specifically a TH2 type so un-recognized, todo
+
   it "excess_decision_variables2 CL_0000546" $ do
     excess_decision_variables2 "CL_0000546" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000546")
--}
 
 
-{- Not in Maecker et al.
+
+
   it "excess_decision_variables2 CL_0000917" $ do
     excess_decision_variables2 "CL_0000917" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0000917")
     
@@ -223,4 +223,4 @@ spec = describe "Immport cell marker tests for minimal decision variables" $ do
 
   it "excess_decision_variables2 CL_0001052" $ do
     excess_decision_variables2 "CL_0001052" `shouldBe` (S.empty, "http://purl.obolibrary.org/obo/CL_0001052")
--}
+

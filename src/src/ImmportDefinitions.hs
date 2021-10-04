@@ -64,7 +64,7 @@ cells = [ ("http://purl.obolibrary.org/obo/CL_0000084", [ (cd3_marker,"+") ])
                                                         , (cd4_marker, "-") ])
 
         , ("http://purl.obolibrary.org/obo/CL_0000814", [ (cd3_marker,"+"), (cd56_marker,"+")
-                                                        , (cd14_marker, "-"), (cd33_marker, "-") ]) --cd33 is not in Maecker et al.
+                                                        , (cd14_marker, "-"), (cd33_marker, "-") ])
 
         , ("http://purl.obolibrary.org/obo/CL_0000625", [ (cd3_marker,"+"), (cd8_marker,"+") ])
 
@@ -128,7 +128,8 @@ helper_t_cells = [ ("http://purl.obolibrary.org/obo/CL_0000545", [ (cd3_marker,"
                                                                    (cd8_marker, "-"), (cxcr3_marker, "-") ]) -- Th2
                  , ("http://purl.obolibrary.org/obo/CL_0000917", [ (cd3_marker,"+"), (cd8_marker,"+"), (cxcr3_marker,"+") ]) -- not handled?
                  , ("http://purl.obolibrary.org/obo/CL_0002128", [ (cd3_marker,"+"), (cd8_marker,"+"), (ccr6_marker,"+") ]) -- not handled?
-                 , ("http://purl.obolibrary.org/obo/CL_0001052", [ (cd3_marker,"+"), (cd8_marker,"+")  ]) -- or http://purl.obolibrary.org/obo/CL_0000918
+                 , ("http://purl.obolibrary.org/obo/CL_0001052", [ (cd3_marker,"+"), (cd4_marker,"-"), (cd8_marker,"+"), (cxcr3_marker, "-"),
+                                                                   (ccr6_marker, "-")  ]) -- or http://purl.obolibrary.org/obo/CL_0000918
         ]
 
 
