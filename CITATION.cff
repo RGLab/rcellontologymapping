@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: rcellontologymapping
+message: >-
+  To cite package "rcellontologymapping" in
+  publications use:
+type: software
+authors:
+  - given-names: Keith
+    family-names: Curtis
+  - given-names: Raphael
+    family-names: Gottardo
+repository-code: 'https://github.com/RGLab/rcellontologymapping'
+abstract: >-
+  R interface to generate leukocyte cell
+  classifications from cell surface markers using the
+  decision tree from Maecker et al.
+license: LGPL-3.0
+date-released: '2021-04-19'
